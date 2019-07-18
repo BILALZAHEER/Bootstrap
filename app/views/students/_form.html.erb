@@ -1,30 +1,31 @@
 <head>
 </head>
 <div class="container">
-<%= form_with(model: student, local: true) do |form| %>
+<%= form_with(model: student, class: 'form-vertical' , local: true) do |form| %>
     <%= render 'errors', student: @student %>
     <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name ,class: "form-control", id:"name" %>
+    <%= form.text_field :name ,class: 'form-control', id:"name" %>
     </div>
     <div class="form-group">
     <%= form.label :age %>
-    <%= form.text_field :age ,class: "form-control", id:"age"%>
+    <%= form.text_field :age ,class: 'form-control', id:"age"%>
     </div>
-    
     <div class="form-group">
     <%= form.label :rollno %>
-    <%= form.text_field :rollno ,class: "form-control", id:"rollno"%>
-    </div>
-    
+    <%= form.text_field :rollno ,class: 'form-control', id:"rollno"%>
+    </div>    
     <div class="form-group">
     <%= form.label :email %>
-    <%= form.text_field :email ,class: "form-control", id:"email"%>
+    <%= form.email_field :email ,class: 'form-control', id:"email"%>
+  </div>
+  <div class="form-group">
+    <%= form.label :select %>
+    <%= form.select :sel ,class: 'form-control'%>
   </div>
     <div class="form-group">
   <div>
     <%= form.submit "Create" , class: 'btn btn-primary btn-block' %>
     </div>
-    
  </div>
 <% end %>

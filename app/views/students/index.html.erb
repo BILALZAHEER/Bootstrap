@@ -1,16 +1,14 @@
 <%if user_signed_in? %>
-  <p id="notice"><%= notice %></p>
   <div class="container">
     <table class="table table-striped">
+    <p id="notice"><%= notice %></p>
       <thead>
         <tr>
           <th><strong>Name</strong></th>
           <th><strong>Age</strong></th>
           <th><strong>RollNo</strong></th>
           <th><strong>Email</strong></th>
-           <th><strong>Option1</strong></th>
-          <th><strong>Option2</strong></th>
-          <th><strong>Option3</strong></th>
+          <th><strong>Options</strong></th>
         </tr>
       </thead>
     <tbody>
@@ -20,9 +18,11 @@
           <td><%= student.age %></td>
           <td><%= student.rollno %></td>
           <td><%= student.email %></td>
-          <td><%= link_to 'Show', student %></td>
-          <td><%= link_to 'Edit', edit_student_path(student) %></td>
-          <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <div class="btn_group">
+          <td><%= link_to 'Show', student , class: 'btn btn-primary btn-success' %>
+          <%= link_to 'Edit', edit_student_path(student) , class: 'btn btn-primary  btn-success' %>
+          <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } , class: 'btn btn-primary btn-success' %></td>
+        </div>
         </tr>
       <% end %>
     </tbody>
