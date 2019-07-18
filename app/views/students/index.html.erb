@@ -1,43 +1,31 @@
 <%if user_signed_in? %>
-<p id="notice"><%= notice %></p>
-
-
-
-<div class="container">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th><strong>Name</strong></th>
-        <th><strong>Age</strong></th>
-        <th><strong>RollNo</strong></th>
-        <th><strong>Email</strong></th>
-         <th><strong>Option1</strong></th>
-        <th><strong>Option2</strong></th>
-        <th><strong>Option3</strong></th>
-      </tr>
-    </thead>
+  <p id="notice"><%= notice %></p>
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><strong>Name</strong></th>
+          <th><strong>Age</strong></th>
+          <th><strong>RollNo</strong></th>
+          <th><strong>Email</strong></th>
+           <th><strong>Option1</strong></th>
+          <th><strong>Option2</strong></th>
+          <th><strong>Option3</strong></th>
+        </tr>
+      </thead>
     <tbody>
-  <tbody>
-    <% @students.each do |student| %>
-      <tr>
-        <td><%= student.name %></td>
-        <td><%= student.age %></td>
-        <td><%= student.rollno %></td>
-        <td><%= student.email %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-
+      <% @students.each do |student| %>
+        <tr>
+          <td><%= student.name %></td>
+          <td><%= student.age %></td>
+          <td><%= student.rollno %></td>
+          <td><%= student.email %></td>
+          <td><%= link_to 'Show', student %></td>
+          <td><%= link_to 'Edit', edit_student_path(student) %></td>
+          <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     </tbody>
-  </table>
-    <div>
-    <%= link_to 'New Student', new_student_path , class: 'btn btn-primary btn-block' %>
+    </table>
   </div>
-</div>
-
-
-<br>
-  <% end %>
+<% end %>
