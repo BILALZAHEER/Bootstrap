@@ -1,0 +1,38 @@
+<%if user_signed_in? %>
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <h2>Striped Rows</h2>
+  <p>The .table-striped class adds zebra-stripes to a table:</p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><strong>Name</strong></th>
+        <th><strong>Age</strong></th>
+        <th><strong>RollNo</strong></th>
+        <th><strong>Email</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @student.name %></td>
+        <td><%= @student.age %></td>
+        <td><%= @student.rollno %></td>
+        <td><%= @student.email%></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+<div class="container">
+ <div>
+    <%= link_to 'Edit',edit_student_path(@student) , class: 'btn btn-primary btn-block btn-success' %>
+    <%= link_to 'Back',students_path , class: 'btn btn-primary btn-block' %>
+    
+  </div>
+</div>
+
+
+    <% end %>
