@@ -1,3 +1,3 @@
 class Student < ApplicationRecord
-	attr_accessor :sel	
+	attr_accessor :sel
 end

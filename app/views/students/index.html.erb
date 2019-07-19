@@ -8,6 +8,7 @@
           <th><strong>Age</strong></th>
           <th><strong>RollNo</strong></th>
           <th><strong>Email</strong></th>
+           <th><strong>Selected</strong></th>
           <th><strong>Options</strong></th>
         </tr>
       </thead>
@@ -18,6 +19,7 @@
           <td><%= student.age %></td>
           <td><%= student.rollno %></td>
           <td><%= student.email %></td>
+          <td><%= student.sel %></td>
           <div class="btn_group">
           <td><%= link_to 'Show', student , class: 'btn btn-primary btn-success' %>
           <%= link_to 'Edit', edit_student_path(student) , class: 'btn btn-primary  btn-success' %>
