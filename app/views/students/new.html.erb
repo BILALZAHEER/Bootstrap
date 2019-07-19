@@ -1,6 +1,29 @@
+<head>
+	<% title "-Add Student" %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("#div1").hide();
+  });
+  $("#show").click(function(){
+    $("#div1").show();
+  });
+});
+</script>
+</head>
+
+<div class="container">  
+  
+<button class= "btn btn-primary", id="hide" >Hide</button>
+<button class= "btn btn-primary", id="show" >Show</button>
+</div>
+<div id="div1">
+
 <%if user_signed_in? %>
 	<%= render 'form', student: @student %>
 	  <div>
 	    <%= link_to 'Back', students_path , class: 'btn btn-primary btn-block' %>
 	  </div>
 <% end %>
+</div>

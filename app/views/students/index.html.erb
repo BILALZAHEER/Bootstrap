@@ -1,4 +1,5 @@
 <%if user_signed_in? %>
+<% title "-All Students" %>
   <div class="container">
     <table class="table table-striped">
     <p id="notice"><%= notice %></p>
@@ -8,6 +9,7 @@
           <th><strong>Age</strong></th>
           <th><strong>RollNo</strong></th>
           <th><strong>Email</strong></th>
+          <th><strong>City</strong></th>
           <th><strong>Options</strong></th>
         </tr>
       </thead>
@@ -18,6 +20,7 @@
           <td><%= student.age %></td>
           <td><%= student.rollno %></td>
           <td><%= student.email %></td>
+          <td><%= student.City %></td>
           <div class="btn_group">
           <td><%= link_to 'Show', student , class: 'btn btn-primary btn-success' %>
           <%= link_to 'Edit', edit_student_path(student) , class: 'btn btn-primary  btn-success' %>

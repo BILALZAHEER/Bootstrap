@@ -45,6 +45,6 @@ def update
       @student = Student.find(params[:id])
     end
     def student_params
-      params.require(:student).permit(:name, :age, :rollno, :email)
+      params.require(:student).permit(:name, :age, :rollno, :email,:City)
     end
 end
