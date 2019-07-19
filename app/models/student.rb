@@ -1,3 +1,3 @@
 class Student < ApplicationRecord
-	attr_accessor :sel	
+	paginates_per 2
 end
