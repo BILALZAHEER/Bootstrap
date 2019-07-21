@@ -1,7 +1,5 @@
-<head>
-</head>
 <div class="container">
-<%= form_with(model: student, class: 'form-vertical' , local: true) do |form| %>
+<%= form_for(@student , class: 'form-vertical' , remote: true) do |form| %>
     <%= render 'errors', student: @student %>
     <div class="form-group">
     <%= form.label :name %>
@@ -14,14 +12,14 @@
     <div class="form-group">
     <%= form.label :rollno %>
     <%= form.text_field :rollno ,class: 'form-control', id:"rollno"%>
-    </div>    
+    </div>
     <div class="form-group">
     <%= form.label :email %>
     <%= form.email_field :email ,class: 'form-control', id:"email"%>
     </div>
     <div class="form-group">
      <%= form.label :City %>
-     <%= form.select :City , ['Lahore','Islamabad','Karachi'] , { include_blank: 'Please choose' } , { :class => 'form-control' } %>
+     <%= form.select :City , ['Lahore','Islamabad','Karachi'] , {} , { :class => 'form-control form-control-chosen' } %>
     </div>
     <div class="form-group">
       <div>

@@ -18,15 +18,14 @@
           <td><%= @student.age %></td>
           <td><%= @student.rollno %></td>
           <td><%= @student.email%></td>
-          <td><%= @student.City%></td> 
+          <td><%= @student.City%></td>
         </tr>
       </tbody>
     </table>
   </div>
   <div class="container">
    <div>
-      <%= link_to 'Edit',edit_student_path(@student) , class: 'btn btn-primary btn-block btn-success' %>
-      <%= link_to 'Back',students_path , class: 'btn btn-primary btn-block' %>      
+      <%= link_to 'Back',students_path , class: 'btn btn-primary btn-block' %>
     </div>
   </div>
 <% end %>

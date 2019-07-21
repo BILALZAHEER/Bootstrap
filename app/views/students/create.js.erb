@@ -1,0 +1,5 @@
+$('#AddDiv form').remove();
+$('#AddDiv a').show();
+$('#notice').text("Student was successfully created");
+$('table#students tbody').append("<%= j render @student %>");
+

@@ -1,0 +1,12 @@
+
+<tr id='<%= student.id %>'>
+          <td><%= student.name %></td>
+          <td><%= student.age %></td>
+          <td><%= student.rollno %></td>
+          <td><%= student.email %></td>
+          <td><%= student.City %></td>
+          <div class="btn_group">
+          <td><%= link_to 'Show', student , class: 'btn btn-primary btn-success' %>
+          <%= link_to 'Edit', edit_student_path(student) , class: 'btn btn-primary  btn-success' %>
+          <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' , remote: true }, class: 'btn btn-primary btn-success' , id: 'delete' %></td>
+</tr>

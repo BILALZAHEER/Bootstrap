@@ -6,6 +6,8 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'chosen.jquery' %>
+    <%= stylesheet_link_tag 'chosen' %>
   </head>
   <body>
 <% if !user_signed_in?%>
@@ -21,7 +23,6 @@
 	 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
 	    <h5 class="my-0 mr-md-auto font-weight-normal">Bootstrap</h5>
 	      <nav class="my-2 my-md-0 mr-md-3">
-	      	<%= link_to 'New Student', new_student_path ,class:'btn btn-primary' %>
 	      	<%= link_to 'Students', students_path,class:'btn btn-primary' %>
 	        <%= link_to("Logout",destroy_user_session_path,  :method => :delete ,class:'btn btn-primary' )%>
 	      </nav>
@@ -29,5 +30,10 @@
 <% end %>
        <p class="alert"><%= alert %></p>
   <%= yield %>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.6/chosen.jquery.min.js"></script>
   </body>
 </html>
