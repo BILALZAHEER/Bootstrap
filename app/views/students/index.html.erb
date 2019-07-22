@@ -1,42 +1,27 @@
-<script>
-$(document).ready(function(){
-$('#delete').on('click' , function(){
-  $.ajax({
-    url: '/students/' + this.parentElement.id ,
-    type: 'DELETE' ,
-    success: function(r){
-
-    }
-  });
-});
-});
-</script>
 <%if user_signed_in? %>
 <% title "-All Students" %>
-  <div class="container">
-    <table class="table table-striped" id="students">
+<div class="container">
+  <table class="table table-striped" id="students">
     <p id="notice"><%= notice %></p>
-      <thead>
-        <tr>
-          <th><strong>Name</strong></th>
-          <th><strong>Age</strong></th>
-          <th><strong>RollNo</strong></th>
-          <th><strong>Email</strong></th>
-          <th><strong>City</strong></th>
-          <th><strong>Options</strong></th>
-        </tr>
-      </thead>
+    <thead>
+      <tr>
+        <th><strong>Name</strong></th>
+        <th><strong>Age</strong></th>
+        <th><strong>RollNo</strong></th>
+        <th><strong>Email</strong></th>
+        <th><strong>City</strong></th>
+        <th><strong>Options</strong></th>
+      </tr>
+    </thead>
     <tbody>
-       <%= render partial: 'student' , collection: @students %>
+      <%= render partial: 'student' , collection: @students %>
     </tbody>
-    </table>
-      <div id="AddDiv">
-  <%= link_to 'New Student', new_student_path, remote: true , class:'btn btn-primary' %>
+  </table>
+  <div id="AddDiv">
+    <%= link_to 'New Student', new_student_path, remote: true , class:'btn btn-primary' %>
   </div>
   <br>
   <%= paginate @students %>
-  </div>
-
+</div>
 <br>
-  </div>
 <% end %>

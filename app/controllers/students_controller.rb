@@ -7,8 +7,10 @@ class StudentsController < ApplicationController
   end
   def new
     @student = Student.new
+    @students=Student.all
   end
   def edit
+      @students=Student.all
   end
   def create
     @student = Student.new(student_params)
@@ -17,7 +19,6 @@ class StudentsController < ApplicationController
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
         format.json { render :show, status: :created, location: @student }
         format.js
-
       else
         format.html { render :new }
         format.json { render json: @student.errors, status: :unprocessable_entity }
